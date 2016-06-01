@@ -1,45 +1,35 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Laravel</title>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-
-        <style>
-            html, body {
-                height: 100%;
-            }
-
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
-
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
-
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title {
-                font-size: 96px;
-            }
-        </style>
+  <script src="javas.js" ></script>
     </head>
     <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">Laravel 5</div>
+@extends('layouts.app')
+@extends('layout')
+@section('content')
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="panel panel-default">
+                <div class="panel-heading">Welcome</div>
+
+                <div class="panel-body">
+                @if (Auth::check())
+
+                   <a  href=" {!! URL::to('cars') !!}"> 
+                   {!! Form::button('Watch car list!', array('class' => 'btn btn-success')) !!}</a>
+                @else
+                        <a  href=" {!! URL::to('login') !!}"> 
+                   {!! Form::button('Watch car list!', array('class' => 'btn btn-success')) !!}</a>
+                   @endif
+                </div>
             </div>
         </div>
-    </body>
+    </div>
+</div>
+@endsection
+</body>
 </html>
