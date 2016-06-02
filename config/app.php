@@ -156,6 +156,7 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\TestServiceProvider::class,
 
     ],
 
@@ -205,6 +206,7 @@ return [
         'Form' => Illuminate\Html\FormFacade::class,
         'Html' => Illuminate\Html\HtmlFacade::class,
         'Input' => Illuminate\Support\Facades\Input::class,
+        'Someclass'=> App\Facades\Someclass::class,
 
     ],
 

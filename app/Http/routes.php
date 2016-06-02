@@ -45,55 +45,7 @@ Route::get('/car/{car}',
 Route::get('/car/delete/{car}', ['as' => 'car', 'uses' => 'CarController@destroy'] );*/
 
 
-//////////////////////////////
 
-/*Route::get('/', function () {
-    //
-});
-
-
-Route::post('/task', function (Request $request) {
-    //
-});
-
-
-Route::delete('/task/{task}', function (Task $task) {
-    //
-});
-Route::get('/', function () {
-    return view('tasks');
-});
-Route::post('/task', function (Request $request) {
-    $validator = Validator::make($request->all(), [
-        'name' => 'required|max:255',
-    ]);
-
-    if ($validator->fails()) {
-        return redirect('/')
-            ->withInput()
-            ->withErrors($validator);
-    }
-
-    $task = new Task;
-    $task->name = $request->name;
-    $task->save();
-
-    return redirect('/');
-});
-
-Route::get('/task', function () {
-    $tasks = Task::orderBy('created_at', 'asc')->get();
-
-    return view('tasks', [
-        'tasks' => $tasks
-    ]);
-});
-Route::delete('/task/{task}', function (Task $task) {
-    $task->delete();
-
-    return redirect('/');
-});
-*/
 
 	Route::resource('cars', 'CarController');
 //Route::get('/cars',['uses'=>'CarController@index']);
@@ -111,3 +63,14 @@ Route::get('about',function(){
 /*Route::get('/',function(){
 	return redirect('login');
 });*/
+
+Route::get('age/{age}', function() {
+ 
+})->middleware('age');;
+Route::get('name/{name}', function() {
+ 
+})->middleware('name');;
+
+Route::get('/sp', function(){
+    Someclass::get();
+});
