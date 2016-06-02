@@ -32,7 +32,10 @@
     </div>
 
  <a  href="{!! URL::to('cars') !!}"> {!! Form::button('Go Back!', array('class' => 'btn btn-primary')) !!}</a>
+<<<<<<< HEAD
  <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+=======
+>>>>>>> c7c830092d8ac53514bbbf4f8d51176b0b68b60f
 </div>
 
 </body>

@@ -44,7 +44,10 @@
                  {!! Form::open(array('url' => 'cars/' . $value->id, 'class' => 'pull-left')) !!}
                     {!! Form::hidden('_method', 'DELETE') !!}
                     {!! Form::submit('Delete this Car', array('class' => 'btn  btn-small btn-danger')) !!}
+<<<<<<< HEAD
                     <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+=======
+>>>>>>> c7c830092d8ac53514bbbf4f8d51176b0b68b60f
                 {!! Form::close() !!}
             
 
