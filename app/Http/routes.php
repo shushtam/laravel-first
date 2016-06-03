@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
 });
 
@@ -24,27 +24,6 @@ Route::get('/test', function(){
 Route::get('/test', function(){
    return view('test',['name'=>'xx']);
 });
-/*Route::get('/form',function(){
-   return view('form');
-});*/
-
-/////////form//////////////
-/*Route::get('form', 
-  ['as' => 'form', 'uses' => 'formController@create']);
-Route::post('form', 
-  ['as' => 'form_store', 'uses' => 'formController@store']);
-
-Route::get('contact', 
-  ['as' => 'contact', 'uses' => 'ContactController@index']);
-
-Route::get('car', 
-  ['as' => 'car', 'uses' => 'CarController@index']);
-
-Route::get('/car/{car}', 
-  ['as' => 'car', 'uses' => 'CarController@show']);
-Route::get('/car/delete/{car}', ['as' => 'car', 'uses' => 'CarController@destroy'] );*/
-
-
 
 
 	Route::resource('cars', 'CarController');
@@ -64,7 +43,7 @@ Route::get('about',function(){
 	return redirect('login');
 });*/
 
-Route::get('age/{age}', function() {
+/*Route::get('age/{age}', function() {
  
 })->middleware('age');;
 Route::get('name/{name}', function() {
@@ -73,4 +52,22 @@ Route::get('name/{name}', function() {
 
 Route::get('/sp', function(){
     Someclass::get();
+});*/
+Route::get('/', function () {
+    return view('socusers/welcome');
+});
+Route::get('/welcome', function () {
+    return view('socusers/welcome');
+});
+Route::get('/login', function () {
+    return view('socusers/login');
+});
+Route::get('/signin', function () {
+    return view('socusers/signin');
+});
+
+
+Route::resource('socusers', 'SocusersController');
+Route::get('/home', function () {
+    return view('socusers/home');
 });
