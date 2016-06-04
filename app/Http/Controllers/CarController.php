@@ -24,7 +24,7 @@ class CarController extends Controller
         //
            $cars = Car::all();
 
-        // load the view and pass the nerds
+
         return View('cars.index')
             ->with('cars', $cars);
     }
@@ -99,7 +99,7 @@ class CarController extends Controller
         $car = Car::find($id);
         if( $car)
         {
-        // show the view and pass the nerd to it
+     
         return View('cars.show')
             ->with('car', $car);
         }
@@ -119,7 +119,6 @@ class CarController extends Controller
         //
           $car = Car::find($id);
 
-        // show the edit form and pass the nerd
         return View('cars.edit')
             ->with('car', $car);
 

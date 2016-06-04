@@ -5,6 +5,7 @@
 <head>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
         <script src="validate.js"></script>
+        <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="container">

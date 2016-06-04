@@ -25,6 +25,7 @@
   {!! Form::open(array('url' => 'socusers','method'=>'POST','files'=>true)) !!} 
   <a  href="{!! URL::to('socusers') !!}"> {!! Form::button('View all users!', array('class' => 'btn btn-info')) !!}</a>
 
+
 </div>
 </body>
 </html>

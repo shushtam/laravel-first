@@ -34,7 +34,7 @@
         <img width="50" height="50" src="../uploads/{{ $socusers->image }}" />
     </div>
 
- <a  href="{!! URL::to('csocusers') !!}"> {!! Form::button('Go Back!', array('class' => 'btn btn-primary')) !!}</a>
+ <a  href="{!! URL::to('welcome') !!}"> {!! Form::button('Go Back!', array('class' => 'btn btn-primary')) !!}</a>
 
  <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
             </div>

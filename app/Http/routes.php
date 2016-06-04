@@ -43,7 +43,7 @@ Route::get('about',function(){
 	return redirect('login');
 });*/
 
-/*Route::get('age/{age}', function() {
+Route::get('age/{age}', function() {
  
 })->middleware('age');;
 Route::get('name/{name}', function() {
@@ -52,7 +52,7 @@ Route::get('name/{name}', function() {
 
 Route::get('/sp', function(){
     Someclass::get();
-});*/
+});
 Route::get('/', function () {
     return view('socusers/welcome');
 });

@@ -48,20 +48,20 @@ class SocusersController extends Controller
     public function store(Request $request)
     {
        
-            if($request->surname=="")
+            if($request->name=="" && $request->surname=="" && $request->year=="")
             {
     $socusers = DB::table('socusers')->where('email', $request->email)->where('password', $request->password)->first();
-        if($socusers)
+        if($request->name==$socusers->name)
             return View('socusers.home')->with('socusers',$socusers);
         else
         {
-            return View('socusers.login');
+            return View('socusers.signin');
         }
     }
         else
         {
         if(!preg_match("/^[a-zA-Z\d]+$/", $request->name) || !preg_match("/^[a-zA-Z\d]+$/", $request->surname)
-         || !preg_match("/^[\d]+$/", $request->year) || !filter_var($request->email, FILTER_VALIDATE_EMAIL) )
+         || !preg_match("/^[\d]+$/", $request->year) || !filter_var($request->email, FILTER_VALIDATE_EMAIL) || $request->password="" )
            
         {
              Session::flash('message','You entered incorrect');
@@ -74,7 +74,7 @@ class SocusersController extends Controller
 {
     if(INPUT::hasfile('file'))
             {
-                echo "file";
+         
                 $file=INPUT::file('file');
                 $file->move('uploads',$file->getClientOriginalName());
                             DB::table('socusers')->insert(
@@ -125,7 +125,7 @@ class SocusersController extends Controller
          //
           $socusers = socusers::find($id);
 
-        // show the edit form and pass the nerd
+       
         return View('socusers.edit')
             ->with('socusers', $socusers);
     }
@@ -155,7 +155,7 @@ class SocusersController extends Controller
             {
             DB::table('socusers')
             ->where('id', $id)
-            ->update( ['name' => $request->name, 'surname' => $request->surname, 'year' => $request->year,'image'=>null,
+            ->update( ['name' => $request->name, 'surname' => $request->surname, 'year' => $request->year,
      'email' => $request->email,'password' => $request->password]);
            /* DB::table('cars')->insert(
     ['name' => $request->name, 'year' => $request->year]);*/

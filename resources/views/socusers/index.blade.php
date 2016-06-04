@@ -48,6 +48,7 @@
                     {!! Form::hidden('_method', 'DELETE') !!}
                     {!! Form::submit('Delete this Car', array('class' => 'btn  btn-small btn-danger')) !!}-->
 
+
                     <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 
 
@@ -60,6 +61,7 @@
     @endforeach
     </tbody>
 </table>
+<a  href="{!! URL::to('welcome') !!}"> {!! Form::button('Go Back!', array('class' => 'btn btn-primary')) !!}</a>
 
 </div>
 </body>

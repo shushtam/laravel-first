@@ -40,6 +40,7 @@
 
  <a  href="{!! URL::to('socusers') !!}"> {!! Form::button('Go Back!', array('class' => 'btn btn-primary')) !!}</a>
 
+
  <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 
 
