@@ -51,17 +51,17 @@ class SocusersController extends Controller
             if($request->name=="" && $request->surname=="" && $request->year=="")
             {
     $socusers = DB::table('socusers')->where('email', $request->email)->where('password', $request->password)->first();
-        if($request->name==$socusers->name)
+        if($socusers)
             return View('socusers.home')->with('socusers',$socusers);
         else
         {
-            return View('socusers.signin');
+            return View('socusers.login');
         }
     }
         else
         {
         if(!preg_match("/^[a-zA-Z\d]+$/", $request->name) || !preg_match("/^[a-zA-Z\d]+$/", $request->surname)
-         || !preg_match("/^[\d]+$/", $request->year) || !filter_var($request->email, FILTER_VALIDATE_EMAIL) || $request->password="" )
+         || !preg_match("/^[\d]+$/", $request->year) || !filter_var($request->email, FILTER_VALIDATE_EMAIL) || $request->password=="" )
            
         {
              Session::flash('message','You entered incorrect');
